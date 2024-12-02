@@ -2,8 +2,6 @@
   List of all movies
 </h1>
 
-<hr>
-
 <form action="/insert_movie_record" method="post">
   <div>
     <label for="title_field">Title</label>
@@ -31,8 +29,8 @@
   </div>
 
   <div>
-    <label for="director_id_field">Director ID</label>
-    <input id="director_id_field" type="text" name="the_director_id">
+    <label for="director_field">Director ID</label>
+    <input id="director_field" type="text" name="the_director_id">
   </div>
 
   <button>
@@ -88,11 +86,11 @@
 
     <td>
       <% matching_directors = Director.where({ :id => a_movie.director_id }) %>
-      
+
       <% the_director = matching_directors.at(0) %>
 
       <% if the_director == nil %>
-        Uh oh! We weren't able to find a diredctor for this movie.
+        Uh oh! We weren't able to find a director for this movie.
       <% else %>
         <%= the_director.name %>
       <% end %>
